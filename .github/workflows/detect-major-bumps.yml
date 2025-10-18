@@ -14,8 +14,6 @@ permissions:
 jobs:
   detect-major:
     runs-on: ubuntu-latest
-    if: |
-      contains(github.event.pull_request.labels.*.name, 'autorelease: pending')
     steps:
       - name: Detect Major Bumps
         id: detect
