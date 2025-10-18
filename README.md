@@ -1,6 +1,6 @@
 # release-please-detect-major-action
 
-A GitHub Action to detect major version bumps (breaking changes) in [release-please](https://github.com/googleapis/release-please) PRs by analyzing changes to the `.release-please-manifest.json` file.
+A GitHub Action to detect major version bumps (breaking changes) in [release-please](https://github.com/googleapis/release-please) PRs by analysing changes to the `.release-please-manifest.json` file.
 
 This action is designed to run on release-please PRs and identify when packages are being bumped to a new major version, allowing you to trigger additional workflows, notifications, or checks when breaking changes are being released.
 
