@@ -1,6 +1,6 @@
 {
   "name": "release-please-detect-major-changes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A GitHub Action to detect major version bumps (breaking changes) in release-please PRs",
   "author": "Ben Hodgson",
   "license": "MIT",
