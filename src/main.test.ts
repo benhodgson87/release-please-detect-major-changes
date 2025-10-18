@@ -128,7 +128,7 @@ describe('main', () => {
 
     expect(mocks.setOutput).toHaveBeenCalledWith('has_major_bump', true);
     expect(mocks.setOutput).toHaveBeenCalledWith(
-      'major_bumps',
+      'updated_paths',
       JSON.stringify({
         '.': ['1.2.3', '2.0.0'],
         'packages/foo': ['3.5.0', '4.0.0']
@@ -172,7 +172,7 @@ describe('main', () => {
     );
     expect(mocks.setOutput).toHaveBeenCalledWith('has_major_bump', false);
     expect(mocks.setOutput).toHaveBeenCalledWith(
-      'major_bumps',
+      'updated_paths',
       JSON.stringify({})
     );
   });

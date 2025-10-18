@@ -5,7 +5,7 @@ import { detectMajorBumps } from './utils/manifest';
 const INPUT_GITHUB_TOKEN = 'github_token';
 const INPUT_MANIFEST_FILE = 'manifest_file';
 const OUTPUT_HAS_MAJOR_BUMP = 'has_major_bump';
-const OUTPUT_MAJOR_BUMPS = 'major_bumps';
+const OUTPUT_UPDATED_PATHS = 'updated_paths';
 
 export async function run(): Promise<void> {
   try {
@@ -46,7 +46,7 @@ export async function run(): Promise<void> {
     }
 
     core.setOutput(OUTPUT_HAS_MAJOR_BUMP, analysis.hasMajorBump);
-    core.setOutput(OUTPUT_MAJOR_BUMPS, JSON.stringify(analysis.majorBumps));
+    core.setOutput(OUTPUT_UPDATED_PATHS, JSON.stringify(analysis.majorBumps));
   } catch (error) {
     if (error instanceof Error) {
       core.setFailed(`Action failed: ${error.message}`);

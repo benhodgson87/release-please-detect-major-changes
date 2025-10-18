@@ -43,7 +43,7 @@ jobs:
 | Output          | Type    | Example                                                  | Description                                                                                                                                  |
 | --------------- | ------- | -------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | `has_major_bump` | Boolean | `true`                                                   | Whether the PR contains any major version bump                                                                                               |
-| `major_bumps`    | JSON    | `{".": ["1.2.3", "2.0.0"], "packages/foo": ["3.5.6", "4.0.0"]}` | JSON object mapping package paths to `[oldVersion, newVersion]` tuples. Only includes packages with major version changes. |
+| `updated_paths`    | JSON    | `{".": ["1.2.3", "2.0.0"], "packages/foo": ["3.5.6", "4.0.0"]}` | JSON object mapping package paths to `[oldVersion, newVersion]` tuples. Only includes packages with major version changes. |
 
 ## Usage
 
@@ -58,7 +58,7 @@ For example:
 
 ### Using with monorepos
 
-The action works with release-please's monorepo support. When multiple packages are being released, the `major_bumps` output will contain entries for each package that has a major version bump.
+The action works with release-please's monorepo support. When multiple packages are being released, the `updated_paths` output will contain entries for each package that has a major version bump.
 
 ```yaml
 - name: Detect Major Bumps
@@ -71,7 +71,7 @@ The action works with release-please's monorepo support. When multiple packages 
   if: steps.detect.outputs.has_major_bump == 'true'
   run: |
     echo "Major bumps detected:"
-    echo '${{ steps.detect.outputs.major_bumps }}' | jq .
+    echo '${{ steps.detect.outputs.updated_paths }}' | jq .
 
     # Example output:
     # {
