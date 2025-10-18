@@ -1,14 +1,12 @@
 name: Detect Major Bumps
 
 on:
-  pull_request:
+  pull_request_target:
     branches:
       - main
     types:
       - opened
       - synchronize
-    paths:
-      - ".release-please-manifest.json"
 
 permissions:
   contents: read
