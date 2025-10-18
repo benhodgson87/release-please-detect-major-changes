@@ -24,12 +24,10 @@ const mocks = vi.hoisted(() => {
 });
 
 vi.mock('@actions/core', () => ({
-  default: {
-    getInput: mocks.getInput,
-    setOutput: mocks.setOutput,
-    setFailed: mocks.setFailed,
-    info: mocks.info
-  }
+  getInput: mocks.getInput,
+  setOutput: mocks.setOutput,
+  setFailed: mocks.setFailed,
+  info: mocks.info
 }));
 
 vi.mock('@actions/github', async (importOriginal) => {
