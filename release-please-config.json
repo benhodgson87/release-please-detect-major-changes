@@ -17,8 +17,7 @@
       "type": "sentence-case"
     }
   ],
-  "include-v-in-tag": false,
-  "tag-separator": "@",
+  "include-v-in-tag": true,
   "packages": {
     ".": {}
   }

@@ -1,4 +1,4 @@
-# release-please-detect-major-action
+# release-please-detect-major-changes
 
 A GitHub Action to detect major version bumps (breaking changes) in [release-please](https://github.com/googleapis/release-please) PRs by analysing changes to the `.release-please-manifest.json` file.
 
@@ -26,7 +26,7 @@ jobs:
     steps:
       - name: Detect Major Bumps
         id: detect
-        uses: benhodgson87/release-please-detect-major-action@v1
+        uses: benhodgson87/release-please-detect-major-changes@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -61,7 +61,7 @@ The action works with release-please's monorepo support. When multiple packages 
 ```yaml
 - name: Detect Major Bumps
   id: detect
-  uses: benhodgson87/release-please-detect-major-action@v1
+  uses: benhodgson87/release-please-detect-major-changes@v1
   with:
     github_token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -85,7 +85,7 @@ If your release-please manifest is not in the default location, you can specify 
 
 ```yaml
 - name: Detect Major Bumps
-  uses: benhodgson87/release-please-detect-major-action@v1
+  uses: benhodgson87/release-please-detect-major-changes@v1
   with:
     github_token: ${{ secrets.GITHUB_TOKEN }}
     manifest_file: '.github/release-please-manifest.json'
@@ -111,7 +111,7 @@ jobs:
     steps:
       - name: Detect Major Bumps
         id: detect
-        uses: benhodgson87/release-please-detect-major-action@v1
+        uses: benhodgson87/release-please-detect-major-changes@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -131,7 +131,7 @@ Send notifications to Slack, Teams, or other channels when breaking changes are 
 ```yaml
 - name: Detect Major Bumps
   id: detect
-  uses: benhodgson87/release-please-detect-major-action@v1
+  uses: benhodgson87/release-please-detect-major-changes@v1
   with:
     github_token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -166,7 +166,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Detect Major Bumps
-        uses: benhodgson87/release-please-detect-major-action@v1
+        uses: benhodgson87/release-please-detect-major-changes@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
