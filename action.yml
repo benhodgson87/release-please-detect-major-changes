@@ -1,0 +1,22 @@
+name: Release Please Detect Major
+description: A GitHub Action to detect major version bumps (breaking changes) in release-please PRs
+author: Ben Hodgson
+branding:
+  icon: "alert-circle"
+  color: "green"
+runs:
+  using: "node20"
+  main: "dist/index.js"
+inputs:
+  github_token:
+    description: "GitHub token for API access"
+    required: true
+  manifest_file:
+    description: "Path to the release-please manifest file"
+    required: false
+    default: ".release-please-manifest.json"
+outputs:
+  has_major_bump:
+    description: "Whether the PR contains any major version bump (true/false)"
+  major_bumps:
+    description: 'JSON object mapping package paths to [oldVersion, newVersion] tuples (e.g., {".": ["1.2.3", "2.0.0"], "packages/foo": ["3.5.6", "4.0.0"]})'
