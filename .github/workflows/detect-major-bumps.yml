@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -41,11 +42,9 @@ jobs:
           script: |
             const majorBumps = JSON.parse('${{ steps.detect.outputs.updated_paths }}');
             let comment = '🚨 **Major version bump(s) detected!**\n\n';
-
             for (const [path, [oldVersion, newVersion]] of Object.entries(majorBumps)) {
               comment += `- \`${path}\`: ${oldVersion} → ${newVersion}\n`;
             }
-                        
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
