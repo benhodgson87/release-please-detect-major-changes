@@ -45,9 +45,7 @@ jobs:
 | `has_major_bump` | Boolean | `true`                                                   | Whether the PR contains any major version bump                                                                                               |
 | `updated_paths`    | JSON    | `{".": ["1.2.3", "2.0.0"], "packages/foo": ["3.5.6", "4.0.0"]}` | JSON object mapping package paths to `[oldVersion, newVersion]` tuples. Only includes packages with major version changes. |
 
-## Usage
-
-### How it works
+## How it works
 
 The action compares the `.release-please-manifest.json` file between the PR's base and head commits to detect version changes.
 
