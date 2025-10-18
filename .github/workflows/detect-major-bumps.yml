@@ -1,0 +1,41 @@
+name: Detect Major Bumps
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - ".release-please-manifest.json"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  detect-major:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Detect Major Bumps
+        id: detect
+        uses: ./
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Comment on PR if major bump detected
+        if: steps.detect.outputs.has_major_bump == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const majorBumps = JSON.parse('${{ steps.detect.outputs.updated_paths }}');
+            let comment = '🚨 **Major version bump(s) detected!**\n\n';
+
+            for (const [path, [oldVersion, newVersion]] of Object.entries(majorBumps)) {
+              comment += `- \`${path}\`: ${oldVersion} → ${newVersion}\n`;
+            }
+                        
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
