@@ -1,4 +1,4 @@
-name: Release Please Detect Major
+name: Release Please Detect Major Changes
 description: A GitHub Action to detect major version bumps (breaking changes) in release-please PRs
 author: Ben Hodgson
 branding:
