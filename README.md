@@ -4,7 +4,7 @@ A GitHub Action to detect major version bumps (breaking changes) in [release-ple
 
 This action is designed to run on release-please PRs and identify when packages are being bumped to a new major version, allowing you to trigger additional workflows, notifications, or checks when breaking changes are being released.
 
-The existing release-please action does not currently output version information on PRs. There is an [open issue](https://github.com/googleapis/release-please-action/issues/684) to implement this functionality to `googleapis/release-please-action`.
+The existing `googleapis/release-please-action` does not currently provide version information as outputs when a PR is created. There is an [open issue](https://github.com/googleapis/release-please-action/issues/684) to implement this functionality.
 
 ## Usage
 
