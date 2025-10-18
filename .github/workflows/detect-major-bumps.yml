@@ -10,7 +10,6 @@ on:
       - reopened
     paths:
       - ".release-please-manifest.json"
-  workflow_dispatch:
 
 permissions:
   contents: read
