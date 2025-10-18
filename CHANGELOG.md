@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/benhodgson87/release-please-detect-major-changes/compare/v1.0.0...v1.0.1) (2025-10-18)
+
+
+### Bug Fixes
+
+* Minify build output ([#18](https://github.com/benhodgson87/release-please-detect-major-changes/issues/18)) ([a6dcd7a](https://github.com/benhodgson87/release-please-detect-major-changes/commit/a6dcd7ac2bf7de3a9375a101c17acc2f6ba0dbeb))
+
 ## 1.0.0 (2025-10-18)
 
 
