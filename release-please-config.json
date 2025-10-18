@@ -12,12 +12,14 @@
     { "type": "build", "section": "Build System", "hidden": true },
     { "type": "ci", "section": "Continuous Integration", "hidden": true }
   ],
+  "include-component-in-tag": false,
+  "include-v-in-tag": true,
+  "pull-request-title-pattern": "chore: release ${version}",
   "plugins": [
     {
       "type": "sentence-case"
     }
   ],
-  "include-v-in-tag": true,
   "packages": {
     ".": {}
   }
