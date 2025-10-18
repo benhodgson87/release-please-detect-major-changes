@@ -9,6 +9,8 @@ on:
       - synchronize
       - reopened
       - labeled
+    paths:
+      - ".release-please-manifest.json"
 
 permissions:
   contents: write
