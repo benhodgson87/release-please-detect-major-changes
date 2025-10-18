@@ -50,7 +50,7 @@ jobs:
       - name: Tag major and minor versions
         run: |
           git config user.name benhodgson87-actions-bot[bot]
-          git config user.email benhodgson87-actions-bot[bot]@users.noreply.github.com
+          git config user.email 238876957+benhodgson87-actions-bot[bot]@users.noreply.github.com
           git remote add gh-token "https://${{ steps.app-token.outputs.token }}@github.com/benhodgson87/release-please-detect-major-changes.git"
           git tag -d v${{ needs.release-please.outputs.major }} || true
           git tag -d v${{ needs.release-please.outputs.major }}.${{ needs.release-please.outputs.minor }} || true
