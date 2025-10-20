@@ -141,7 +141,7 @@ Send notifications to Slack, Teams, or other channels when breaking changes are 
   with:
     payload: |
       {
-        "text": "🚨 Breaking changes detected in ${{ github.event.pull_request.html_url }}"
+        "text": "🚨 A new major release is ready for review: ${{ github.event.pull_request.html_url }}"
       }
   env:
     SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
